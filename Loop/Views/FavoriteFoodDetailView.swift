@@ -14,7 +14,7 @@ public struct FavoriteFoodDetailView: View {
     let food: StoredFavoriteFood?
     let onFoodDelete: (StoredFavoriteFood) -> Void
     
-    @State private var isConfirmingDelete = false
+    @State private var isConfirmingDelete: Bool
     
     let carbFormatter: QuantityFormatter
     let absorptionTimeFormatter: DateComponentsFormatter
@@ -23,7 +23,7 @@ public struct FavoriteFoodDetailView: View {
     public init(food: StoredFavoriteFood?, onFoodDelete: @escaping (StoredFavoriteFood) -> Void, isConfirmingDelete: Bool = false, carbFormatter: QuantityFormatter, absorptionTimeFormatter: DateComponentsFormatter, preferredCarbUnit: HKUnit = HKUnit.gram()) {
         self.food = food
         self.onFoodDelete = onFoodDelete
-        self.isConfirmingDelete = isConfirmingDelete
+        self.isConfirmingDelete = false
         self.carbFormatter = carbFormatter
         self.absorptionTimeFormatter = absorptionTimeFormatter
         self.preferredCarbUnit = preferredCarbUnit
